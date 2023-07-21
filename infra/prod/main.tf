@@ -17,7 +17,7 @@ module "vpc" {
   ]
   vpc_cidr_block = "10.0.0.0/16"
   region         = "eu-north-1"
-  project_name   = "java-login"
+  project_name   = "wordpress"
 }
 
 module "rds" {
@@ -35,9 +35,9 @@ module "rds" {
   db_engine_version        = "8.0.32"
   db_instance_class        = "db.t3.micro"
   db_storage_type          = "gp2"
-  db_identifier            = "java-login"
-  db_username              = "java-login"
-  pass                     = "wasdwasd74"
+  db_identifier            = "wordpress"
+  db_username              = "wordpress"
+  pass                     = "wordpress"
   db_port                  = 3306
   lambda_role_name         = "Lambda-MYSQL-RESTORE"
   basic_lambda_policy_name = "AWSLambdaBasicExecutionRole"
