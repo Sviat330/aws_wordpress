@@ -112,3 +112,17 @@ resource "aws_security_group" "asg_sg" {
     ipv6_cidr_blocks = ["::/0"]
   }
 }
+
+
+resource "aws_autoscaling_policy" "avg_cpu_target" {
+  name                   = "${local.def_tag}-avg-cpu-greater-than"
+  policy_type            = "TargetTrackingScaling"
+  autoscaling_group_name = aws_autoscaling_group.this.id
+  target_tracking_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ASGAverageCPUUtilization"
+    }
+    target_value = 50.0
+  }
+
+}
