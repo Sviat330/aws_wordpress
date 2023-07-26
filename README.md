@@ -6,12 +6,13 @@ The "WordPress Deployment on AWS" project aimed to deploy a fully functional Wor
 ![Scheme](images/scheme.jpg)
 ## Technologies Used: ##
 
-AWS (Amazon Web Services) for cloud infrastructure
-WordPress for content management and website creation
-Auto Scaling Groups with EC2 for hosting WordPress application
-Amazon RDS for the database tier
-Amazon ALB for load balancing
-Amazon EFS for media and asset storage
+AWS (Amazon Web Services) for cloud infrastructure<br>
+WordPress for content management and website creation<br>
+Amazon Auto Scaling Groups with EC2 for hosting WordPress application<br>
+Amazon SNS for notification when auto scaling occurs<br>
+Amazon RDS for the database tier<br>
+Amazon ALB for load balancing<br>
+Amazon EFS for media and asset storage<br>
 
 ## Key Features: ##
 
@@ -32,10 +33,9 @@ Security: AWS security groups and IAM roles were employed to control access to i
 ## Design and Architecture: ##
 The architecture involved the following components:
 
-WordPress Application Layer: Multiple Amazon EC2 instances hosted the WordPress application, with an Elastic Load Balancer (ELB) distributing traffic among them.
-Database Layer: Amazon RDS hosted the MySQL database, providing a reliable and scalable backend for WordPress data.
-Media Storage: Amazon EFS stored uploaded media files, providing durability and reducing the load on the application servers.
-
+WordPress Application Layer: Multiple Amazon EC2 instances hosted the WordPress application, with an Elastic Load Balancer (ELB) distributing traffic among them.<br>
+Database Layer: Amazon RDS hosted the MySQL database, providing a reliable and scalable backend for WordPress data.<br>
+Media Storage: Amazon EFS stored uploaded media files, providing durability and reducing the load on the application servers.<br>
 
 ## Deployment Process: ##
 The deployment process was automated using Terraform. The configuration files defined the necessary AWS resources and configurations, making it easy to replicate the infrastructure across different environments.
