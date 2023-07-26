@@ -3,6 +3,7 @@
 ## Project Overview: ##
 The "WordPress Deployment on AWS" project aimed to deploy a fully functional WordPress website on Amazon Web Services (AWS) cloud infrastructure using terraform. By utilizing AWS services, the project achieved high availability, scalability, and security for the WordPress application.
 
+![Scheme](images/scheme.jpg)
 ## Technologies Used: ##
 
 AWS (Amazon Web Services) for cloud infrastructure
